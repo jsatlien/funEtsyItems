@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+h1 {
+  font-size: 25px;
+  font-weight: lighter;
+  height: 72px;
+  margin: 0px;
+  padding-left: 35px;
+  padding-top: 20px;
+}
+
+h3 {
+  font-family: 'Bitter', serif;
+  font-weight: lighter;
+  font-size: 30px;
+  text-align: center;
+  margin: -20px;
+  width: 265;
+  background-color: #EEEEEE;
+
+}
+
+.banner {
+  height: 135px;
+}
+
+.banner img {
+  height: 135px;
+}
+
+footer {
+  font-size: 14px;
+  text-align: center;
+  height: 120px;
+  background-color: #4B484F;
+  color: lightgrey;
+  padding-top: 90px;
+  width: 1150px;
+}
+
+.answersbox {
+  height: 1550px;
+  padding-top: 87px;
+  background-color: #EEEEEE;
+  text-align: center;
+  width: 1150px;
+}
+
+.answer {
+  height: 239px;
+  border-top: 1px solid lightgrey;
+  margin: 0px;
+}
