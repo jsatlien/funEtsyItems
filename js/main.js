@@ -5,6 +5,9 @@
 //     newPriceArray.push(priceArray)
 //   };
 // };
+
+// 1. Find the average price of every item on the list. -
+
 var priceAverage = function (items) {
   var answer1 = document.getElementById('answer1')
   var priceArray = [];
@@ -19,4 +22,16 @@ var priceAverage = function (items) {
 };
   answer1.innerHTML = priceAverage (items);
 
-// answer1.innerHTML = priceSum / items.length;
+// 2.  Show me how to get an array of items that cost between $14.00 and $18.00 USD
+var answer2 = document.getElementById('answer2');
+
+var speciCost = function (item) {
+  for (var i = 0; i < items.length; i++) {
+    var speciList = []
+    if (item[i].price > 14 && item[i].price < 18) {
+      speciList.push(item[i].title);
+    };
+  };
+  return String(speciList[0]) + String(speciList[1]) + String(speciList[3]);
+};
+answer2.innerHTML = speciCost (items)
