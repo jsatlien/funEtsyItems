@@ -5,7 +5,6 @@
 //     newPriceArray.push(priceArray)
 //   };
 // };
-
 var priceAverage = function (items) {
   var answer1 = document.getElementById('answer1')
   var priceArray = [];
@@ -16,5 +15,8 @@ var priceAverage = function (items) {
   for (var c = 0; c < priceArray.length; c++) {
   priceSum += priceArray[c];
   };
-  answer1.innerHTML = priceSum / items.length;
+  return priceSum / items.length;
 };
+  answer1.innerHTML = priceAverage (items);
+
+// answer1.innerHTML = priceSum / items.length;
