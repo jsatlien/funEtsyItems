@@ -7,8 +7,14 @@
 // };
 
 var priceAverage = function (items) {
+  var answer1 = document.getElementById('answer1')
+  var priceArray = [];
   for (var i = 0; i < items.length; i++) {
-    var priceArray = items[i].price;
-    return priceArray.length;
+    priceArray.push(items[i].price);
   };
+  var priceSum = 0;
+  for (var c = 0; c < priceArray.length; c++) {
+  priceSum += priceArray[c];
+  };
+  answer1.innerHTML = priceSum / items.length;
 };
