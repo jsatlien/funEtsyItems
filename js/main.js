@@ -1,15 +1,7 @@
-// var priceAverage = function (items) {
-//   var newPriceArray = []
-//   for (var count = 1; count < items.length; count++) {
-//     var priceArray = items[count].prices.map();
-//     newPriceArray.push(priceArray)
-//   };
-// };
-
 // 1. Find the average price of every item on the list. -
+var answer1 = document.getElementById('answer1')
 
 var priceAverage = function (items) {
-  var answer1 = document.getElementById('answer1')
   var priceArray = [];
   for (var i = 0; i < items.length; i++) {
     priceArray.push(items[i].price);
@@ -18,20 +10,64 @@ var priceAverage = function (items) {
   for (var c = 0; c < priceArray.length; c++) {
   priceSum += priceArray[c];
   };
-  return priceSum / items.length;
+  return Math.round((priceSum / items.length)*100)/100;
 };
-  answer1.innerHTML = priceAverage (items);
+  answer1.innerHTML = "Average Price: " + priceAverage (items);
 
 // 2.  Show me how to get an array of items that cost between $14.00 and $18.00 USD
+
 var answer2 = document.getElementById('answer2');
 
-var speciCost = function (item) {
+var speciCost = function (itemArr) {
+  var speciList = []
   for (var i = 0; i < items.length; i++) {
-    var speciList = []
-    if (item[i].price > 14 && item[i].price < 18) {
-      speciList.push(item[i].title);
+    if (itemArr[i].price > 14 && itemArr[i].price < 18) {
+      speciList.push(itemArr[i].title);
     };
   };
-  return String(speciList[0]) + String(speciList[1]) + String(speciList[3]);
+  return speciList;
 };
-answer2.innerHTML = speciCost (items)
+answer2.innerHTML = speciCost(items).join("<p>");
+
+// 3. Which item has a "GBP" currency code? Display it's name and price. -
+
+var answer3 = document.getElementById("answer3");
+
+var gbpArray = items.filter(function (x) {
+  return x.currency_code === "GBP";
+});
+  gbpArray.forEach(function (x) {
+    answer3.innerHTML += String(x.title) + ", " + "Price: " + String(x.price) + " pounds"
+  });
+
+// 4. Display a list of all items who are made of wood. (.materials)
+
+var answer4 = document.getElementById("answer4")
+
+var woodArray = items.filter(function (x) {
+    return x.materials.includes("wood");
+  });
+    woodArray.forEach( function (x) {
+      answer4.innerHTML += "<div>" + String(x.title) + "</div>";
+    });
+
+// 5. Which items are made of eight or more materials? Display the name, number of items and the items it is made of.
+
+var answer5 = document.getElementById('answer5')
+
+var eightMats = items.filter(function (x) {
+    return x.materials.length >= 8; });
+    console.log(eightMats);
+
+    eightMats.forEach( function (x) {
+      answer5.innerHTML += "<p>" + x.title + "</p>" + "<div>" + "Materials: " + x.materials + "</div>";
+    });
+
+// 6. How many items were made by their sellers? @ = 18
+
+var answer6 = document.getElementById('answer6')
+
+var homeMade = items.filter(function (x) {
+    return x.who_made === "i_did";
+});
+    answer6.innerHTML = String(homeMade.length) + " were made by their seller.";
